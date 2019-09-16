@@ -41,9 +41,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<List<StockHomePage>> _getAllStocks() async {
-      var data = await http.get("http://192.168.43.231:5002/homepage");
-    //var data = await http.get(
-      //"https://raw.githubusercontent.com/mrinal1209/Spring_CRUD_Demo_with_REDIS/master/hack");
+    //  var data = await http.get("http://192.168.43.231:5002/homepage");
+    var data = await http.get(
+      "https://raw.githubusercontent.com/mrinal1209/Spring_CRUD_Demo_with_REDIS/master/hack");
 
     var jsonData = json.decode(data.body);
 
@@ -117,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 builder: (context) =>
                                                     DetailPage(
                                                         snapshot.data[index])));
-                                      },
+                                      }
                                     ),
                                   ),
                                   Container(
@@ -204,7 +204,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
   Prices price;
   Future<String> getCoinsTimeSeries() async {
     var response = await http.get(url);
-   // var response = await http.get(this.stocks.prdouctDetailedUrl);
+    //var response = await http.get(this.stocks.prdouctDetailedUrl);
     if (this.mounted) {
       this.setState(() {
         var extractdata = json.decode(response.body);
